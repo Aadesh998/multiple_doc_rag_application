@@ -9,10 +9,11 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"ffdc.chat_application/handlers"
 )
 
 func StartServer() {
-
 	server := createServer()
 	if err := runServer(context.Background(), server, 10*time.Second); err != nil {
 		log.Fatalf("Failed to Start Server %s: ", err)
@@ -21,6 +22,9 @@ func StartServer() {
 
 func createServer() *http.Server {
 	mux := http.DefaultServeMux
+
+	mux.HandleFunc("/api/upload", handlers.ProcessPDFHandler)
+
 	server := &http.Server{
 		Addr:    ":5000",
 		Handler: mux,
@@ -36,7 +40,7 @@ func runServer(
 ) error {
 	errCh := make(chan error, 1)
 	go func() {
-		log.Println("Server running on :8000")
+		log.Println("Server running on :5000")
 		if err := server.ListenAndServe(); !errors.Is(
 			err, http.ErrServerClosed,
 		) {
