@@ -66,7 +66,7 @@ func ProcessPDFHandler(w http.ResponseWriter, r *http.Request) {
 
 		savedFiles = append(savedFiles, dstPath)
 
-		cmd := exec.Command("python3", "process_pdf.py", dstPath)
+		cmd := exec.Command("python", "processPDF.py", dstPath)
 		output, err = cmd.CombinedOutput()
 		if err != nil {
 			log.Println("Python error:", string(output))
