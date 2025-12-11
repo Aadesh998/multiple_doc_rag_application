@@ -2,7 +2,6 @@ package web
 
 import (
 	"context"
-	"database/sql"
 	"errors"
 	"log"
 	"net/http"
@@ -12,37 +11,31 @@ import (
 	"time"
 
 	"ffdc.chat_application/handlers"
-	"ffdc.chat_application/pkg/database"
 )
 
 func StartServer() {
 
-	db, err := database.InitDB("rag.db")
-	if err != nil {
-		log.Fatalf("Error initializing database: %v", err)
-	}
-	defer db.Close()
+	// db, err := database.InitDB("rag.db")
+	// if err != nil {
+	// 	log.Fatalf("Error initializing database: %v", err)
+	// }
+	// defer db.Close()
 
-	server := createServer(db)
+	server := createServer()
 	if err := runServer(context.Background(), server, 10*time.Second); err != nil {
 		log.Fatalf("Failed to Start Server %s: ", err)
 	}
 }
 
-func createServer(db *sql.DB) *http.Server {
+func createServer() *http.Server {
 	mux := http.DefaultServeMux
 
-	vectorStore, err := database.LoadEmbeddings(db)
-	if err != nil {
-		log.Fatalf("Error loading embeddings from database: %v", err)
-	}
-
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		IndexPage(w, vectorStore)
+		IndexPage(w)
 	})
 
 	mux.HandleFunc("/api/upload", handlers.ProcessPDFHandler)
-	mux.HandleFunc("/api/ws", handlers.HandleWebSocket(vectorStore))
+	mux.HandleFunc("/api/ws", handlers.HandleWebSocket)
 
 	server := &http.Server{
 		Addr:    ":5000",

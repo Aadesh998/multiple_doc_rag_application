@@ -1,417 +1,71 @@
-2025-12-11 08:12:21,011 | ERROR | Cannot connect to Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
-2025-12-11 08:14:37,392 | ERROR | Cannot connect to Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
-2025-12-11 08:15:34,438 | ERROR | Cannot connect to Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
-2025-12-11 08:16:48,993 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:48,994 | INFO | Ollama is working correctly
-2025-12-11 08:16:48,995 | INFO | Processing: uploads/NIPS-2017-attention-is-all-you-need-Paper.pdf
-2025-12-11 08:16:49,332 | INFO | Extracted 32642 characters
-2025-12-11 08:16:49,333 | INFO | Created 33 chunks
-2025-12-11 08:16:49,338 | INFO | Database ready: rag.db
-2025-12-11 08:16:49,338 | INFO | [1/33] Processing chunk...
-2025-12-11 08:16:50,675 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:50,676 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:50,677 | INFO | [2/33] Processing chunk...
-2025-12-11 08:16:51,464 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:51,465 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:51,466 | INFO | [3/33] Processing chunk...
-2025-12-11 08:16:52,181 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:52,182 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:52,183 | INFO | [4/33] Processing chunk...
-2025-12-11 08:16:52,863 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:52,864 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:52,865 | INFO | [5/33] Processing chunk...
-2025-12-11 08:16:53,638 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:53,639 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:53,640 | INFO | [6/33] Processing chunk...
-2025-12-11 08:16:54,443 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:54,445 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:54,445 | INFO | [7/33] Processing chunk...
-2025-12-11 08:16:55,314 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:55,315 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:55,316 | INFO | [8/33] Processing chunk...
-2025-12-11 08:16:55,972 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:55,973 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:55,974 | INFO | [9/33] Processing chunk...
-2025-12-11 08:16:56,546 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:56,548 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:56,549 | INFO | [10/33] Processing chunk...
-2025-12-11 08:16:57,171 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:57,173 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:57,174 | INFO | [11/33] Processing chunk...
-2025-12-11 08:16:58,061 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:58,062 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:58,063 | INFO | [12/33] Processing chunk...
-2025-12-11 08:16:58,881 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:58,882 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:58,883 | INFO | [13/33] Processing chunk...
-2025-12-11 08:16:59,740 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:16:59,741 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:16:59,742 | INFO | [14/33] Processing chunk...
-2025-12-11 08:17:00,512 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:00,513 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:00,515 | INFO | [15/33] Processing chunk...
-2025-12-11 08:17:01,312 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:01,313 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:01,314 | INFO | [16/33] Processing chunk...
-2025-12-11 08:17:02,408 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:02,409 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:02,410 | INFO | [17/33] Processing chunk...
-2025-12-11 08:17:03,168 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:03,169 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/process_pdf.py", line 95, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:03,170 | INFO | [18/33] Processing chunk...
-2025-12-11 08:17:27,078 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:27,080 | INFO | Ollama is working correctly
-2025-12-11 08:17:27,080 | INFO | Processing: uploads/NIPS-2017-attention-is-all-you-need-Paper.pdf
-2025-12-11 08:17:27,353 | INFO | Extracted 32642 characters
-2025-12-11 08:17:27,354 | INFO | Created 33 chunks
-2025-12-11 08:17:27,364 | INFO | Database ready: rag.db
-2025-12-11 08:17:27,365 | INFO | [1/33] Processing chunk...
-2025-12-11 08:17:28,291 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:28,292 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:28,293 | INFO | [2/33] Processing chunk...
-2025-12-11 08:17:28,985 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:28,986 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:28,986 | INFO | [3/33] Processing chunk...
-2025-12-11 08:17:29,640 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:29,641 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:29,644 | INFO | [4/33] Processing chunk...
-2025-12-11 08:17:30,381 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:30,382 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:30,383 | INFO | [5/33] Processing chunk...
-2025-12-11 08:17:31,063 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:31,065 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:31,065 | INFO | [6/33] Processing chunk...
-2025-12-11 08:17:31,716 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:31,717 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:31,717 | INFO | [7/33] Processing chunk...
-2025-12-11 08:17:32,433 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:32,434 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:32,435 | INFO | [8/33] Processing chunk...
-2025-12-11 08:17:33,143 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:33,144 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:33,145 | INFO | [9/33] Processing chunk...
-2025-12-11 08:17:33,801 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:33,802 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:33,803 | INFO | [10/33] Processing chunk...
-2025-12-11 08:17:34,442 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:34,443 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:34,444 | INFO | [11/33] Processing chunk...
-2025-12-11 08:17:35,138 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:35,139 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:35,140 | INFO | [12/33] Processing chunk...
-2025-12-11 08:17:35,797 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:35,798 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:35,798 | INFO | [13/33] Processing chunk...
-2025-12-11 08:17:36,551 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:36,552 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:36,552 | INFO | [14/33] Processing chunk...
-2025-12-11 08:17:37,252 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:37,253 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:37,254 | INFO | [15/33] Processing chunk...
-2025-12-11 08:17:37,969 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:37,970 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:37,971 | INFO | [16/33] Processing chunk...
-2025-12-11 08:17:38,904 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:38,905 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:38,906 | INFO | [17/33] Processing chunk...
-2025-12-11 08:17:39,571 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:39,572 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:39,573 | INFO | [18/33] Processing chunk...
-2025-12-11 08:17:40,244 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:40,245 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:40,245 | INFO | [19/33] Processing chunk...
-2025-12-11 08:17:40,981 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:40,982 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:40,983 | INFO | [20/33] Processing chunk...
-2025-12-11 08:17:41,690 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:41,691 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:41,692 | INFO | [21/33] Processing chunk...
-2025-12-11 08:17:42,450 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:42,451 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:42,452 | INFO | [22/33] Processing chunk...
-2025-12-11 08:17:43,237 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:43,238 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:43,238 | INFO | [23/33] Processing chunk...
-2025-12-11 08:17:44,072 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:44,073 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:44,074 | INFO | [24/33] Processing chunk...
-2025-12-11 08:17:44,797 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:44,798 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:44,799 | INFO | [25/33] Processing chunk...
-2025-12-11 08:17:45,390 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:45,391 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:45,391 | INFO | [26/33] Processing chunk...
-2025-12-11 08:17:46,186 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:46,187 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:46,187 | INFO | [27/33] Processing chunk...
-2025-12-11 08:17:46,987 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:46,987 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:46,988 | INFO | [28/33] Processing chunk...
-2025-12-11 08:17:47,640 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:47,641 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:47,641 | INFO | [29/33] Processing chunk...
-2025-12-11 08:17:48,539 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:48,539 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:48,540 | INFO | [30/33] Processing chunk...
-2025-12-11 08:17:49,371 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:49,372 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:49,372 | INFO | [31/33] Processing chunk...
-2025-12-11 08:17:50,228 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:50,229 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:50,230 | INFO | [32/33] Processing chunk...
-2025-12-11 08:17:51,123 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:51,124 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:51,125 | INFO | [33/33] Processing chunk...
-2025-12-11 08:17:51,829 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
-2025-12-11 08:17:51,830 | ERROR | Database error: module 'sqlite_vec' has no attribute 'serialize'
-Traceback (most recent call last):
-  File "/home/aadesh-kumar/Documents/work/ffdc_chatbot/processPDF.py", line 111, in save_to_db
-    serialized = sqlite_vec.serialize(vector)
-                 ^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'sqlite_vec' has no attribute 'serialize'
-2025-12-11 08:17:51,831 | INFO | Processing complete. Success: 0, Failed: 33
+2025-12-11 14:19:23,684 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:24,201 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:24,570 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:24,887 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:25,225 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:25,480 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:25,770 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:26,107 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:26,458 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:26,810 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:27,151 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:27,499 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:27,849 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:28,204 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:28,529 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:28,891 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:29,428 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:29,758 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:30,100 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:30,442 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:30,744 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:31,170 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:31,639 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:32,091 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:32,476 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:32,831 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:33,298 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:33,724 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:34,121 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:34,668 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:35,185 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:35,604 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:36,137 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 14:19:36,577 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:39,036 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:39,535 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:39,910 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:40,182 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:40,460 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:40,832 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:41,137 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:41,466 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:41,797 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:42,076 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:42,399 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:42,709 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:43,019 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:43,326 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:43,636 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:43,952 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:44,439 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:44,780 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:45,069 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:45,416 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:45,716 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:46,081 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:46,466 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:46,862 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:47,177 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:47,478 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:47,902 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:48,326 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:48,660 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:49,131 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:49,555 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:49,995 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:50,438 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:44:50,800 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:49:45,453 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 15:52:18,433 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2025-12-11 16:03:35,361 | INFO | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"

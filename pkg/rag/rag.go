@@ -2,36 +2,31 @@ package rag
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
+	"log"
+	"os/exec"
 
-	"ffdc.chat_application/pkg/database"
-	"ffdc.chat_application/pkg/similarity"
 	"github.com/ollama/ollama/api"
 )
 
-func FindSimilarChunks(queryEmbedding []float64, vectorStore []database.Embedding, topK int) []string {
-	if len(vectorStore) == 0 {
-		return nil
+func FindSimilarChunksPython(query string, topK int) ([]string, error) {
+	cmd := exec.Command("python", "processPDF.py", "--search-go", query, fmt.Sprintf("%d", topK))
+	output, err := cmd.Output()
+	if err != nil {
+		if exitError, ok := err.(*exec.ExitError); ok {
+			log.Printf("Python script failed (vector search). Stderr: %s", string(exitError.Stderr))
+		}
+		return nil, fmt.Errorf("error executing python search: %w", err)
 	}
 
-	var similarChunks []similarity.SortableEmbedding
-	for _, emb := range vectorStore {
-		sim := similarity.CosineSimilarity(queryEmbedding, emb.Embedding)
-		similarChunks = append(similarChunks, similarity.SortableEmbedding{
-			ID:         emb.ID,
-			Chunk:      emb.Chunk,
-			Similarity: sim,
-		})
+	var chunks []string
+	if err := json.Unmarshal(output, &chunks); err != nil {
+		log.Printf("Failed to decode Python output (raw output: %s)", string(output))
+		return nil, fmt.Errorf("error decoding python search output: %w", err)
 	}
 
-	sortedChunks := similarity.MergeSort(similarChunks)
-
-	var topChunks []string
-	for i := 0; i < topK && i < len(sortedChunks); i++ {
-		topChunks = append(topChunks, sortedChunks[i].Chunk)
-	}
-
-	return topChunks
+	return chunks, nil
 }
 
 func GenerateResponse(chatModel, prompt string) (string, error) {
@@ -46,8 +41,8 @@ func GenerateResponse(chatModel, prompt string) (string, error) {
 		Messages: []api.Message{
 			{Role: "user", Content: prompt},
 		},
-		Options: map[string]interface{}{
-			"num_predict": 1024,
+		Options: map[string]any{
+			"num_predict": 2048,
 		},
 	}
 

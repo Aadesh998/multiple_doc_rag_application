@@ -3,8 +3,6 @@ package web
 import (
 	"html/template"
 	"net/http"
-
-	"ffdc.chat_application/pkg/database"
 )
 
 var indexHTML = `
@@ -54,13 +52,13 @@ function sendMsg() {
 </html>
 `
 
-func IndexPage(w http.ResponseWriter, embeddings []database.Embedding) {
+func IndexPage(w http.ResponseWriter) {
 	data := struct {
 		DBLoaded bool
 		Count    int
 	}{
-		DBLoaded: len(embeddings) > 0,
-		Count:    len(embeddings),
+		DBLoaded: true,
+		Count:    0,
 	}
 
 	t, err := template.New("index").Parse(indexHTML)
