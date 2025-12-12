@@ -85,30 +85,6 @@ def create_db():
     conn.commit()
     return conn
 
-# def embed_with_ollama(text, max_retries=2):
-#     words = text.split()
-#     attempts = [
-#         (words[:150], "150"),
-#         (words[:100], "100"),
-#         (words[:50], "50"),
-#     ]
-#     for attempt_num, (word_list, _) in enumerate(attempts):
-#         try:
-#             truncated = " ".join(word_list)
-#             response = ollama.embed(model="nomic-embed-text", input=truncated)
-#             if "embeddings" in response:
-#                 return response["embeddings"][0]
-#             if "embedding" in response:
-#                 return response["embedding"]
-#         except Exception as e:
-#             msg = str(e).lower()
-#             if "batch" in msg or "context" in msg or "too large" in msg:
-#                 if attempt_num < len(attempts) - 1:
-#                     continue
-#                 return None
-#             return None
-#     return None
-
 def get_embeddings(prompt, model="nomic-embed-text"):
     '''Generates embeddings for a given prompt using the specified model.'''
     try:
