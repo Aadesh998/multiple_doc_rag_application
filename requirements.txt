@@ -1,0 +1,8 @@
+pypdf
+ollama
+sqlite-vec
+PyPDF2
+langchain
+numpy
+langchain-community
+langchain-text-splitters

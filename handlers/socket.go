@@ -85,6 +85,11 @@ func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
+		if err := conn.WriteMessage(websocket.TextMessage, []byte("======================")); err != nil {
+			log.Println(err)
+			return
+		}
+
 		if err := conn.WriteMessage(websocket.TextMessage, []byte(response)); err != nil {
 			log.Println(err)
 			return
