@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"sort"
 	"strings"
 
 	"ffdc.chat_application/pkg/rag"
+	"ffdc.chat_application/pkg/similarity"
 	"github.com/gorilla/websocket"
 )
 
@@ -16,6 +18,11 @@ var upgrader = websocket.Upgrader{
 	CheckOrigin: func(r *http.Request) bool {
 		return true
 	},
+}
+
+type ReRankedChunk struct {
+	Chunk      string
+	Similarity float64
 }
 
 func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
@@ -37,7 +44,7 @@ func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 
 		query := string(p)
 
-		similarChunks, err := rag.FindSimilarChunksPython(query, 5)
+		resp, err := rag.FindSimilarChunksPython(query, 20)
 		if err != nil {
 			log.Println("Vector search error:", err)
 			if err := conn.WriteMessage(websocket.TextMessage, []byte("Error: Vector search failed via Python subprocess. Check app.log for details.")); err != nil {
@@ -47,22 +54,47 @@ func HandleWebSocket(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
-		if len(similarChunks) == 0 {
+		if len(resp.Result) == 0 {
 			if err := conn.WriteMessage(websocket.TextMessage, []byte("No relevant information found in the document.")); err != nil {
 				log.Println(err)
 				return
 			}
 			continue
-		} else {
-			for i := 0; i < len(similarChunks); i++ {
-				if err := conn.WriteMessage(websocket.TextMessage, []byte(similarChunks[i])); err != nil {
-					log.Println(err)
-					return
-				}
+		}
+
+		var ranked []ReRankedChunk
+
+		for _, r := range resp.Result {
+			score := similarity.CosineSimilarity(resp.QueryVector, r.Embedding)
+			ranked = append(ranked, ReRankedChunk{
+				Chunk:      r.Chunk,
+				Similarity: score,
+			})
+		}
+
+		sort.Slice(ranked, func(i, j int) bool {
+			return ranked[i].Similarity > ranked[j].Similarity
+		})
+
+		topK := 5
+		if len(ranked) < topK {
+			topK = len(ranked)
+		}
+
+		var contextParts []string
+		for i := 0; i < topK; i++ {
+			contextParts = append(contextParts, ranked[i].Chunk)
+		}
+
+		for _, similarChunk := range contextParts {
+			if err := conn.WriteMessage(websocket.TextMessage, []byte(similarChunk)); err != nil {
+				log.Println(err)
+				return
 			}
 		}
 
-		context := strings.Join(similarChunks, "\n\n")
+		context := strings.Join(contextParts, "\n\n")
+
 		prompt := fmt.Sprintf(`You are given the following retrieved context:
         %s
 

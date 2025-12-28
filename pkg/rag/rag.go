@@ -1,6 +1,7 @@
 package rag
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -10,23 +11,36 @@ import (
 	"github.com/ollama/ollama/api"
 )
 
-func FindSimilarChunksPython(query string, topK int) ([]string, error) {
+type SimilarChunk struct {
+	Chunk     string    `json:"chunk"`
+	Embedding []float32 `json:"embedding"`
+}
+
+type SearchResponse struct {
+	QueryVector []float32      `json:"query_vector"`
+	Result      []SimilarChunk `json:"result"`
+}
+
+func FindSimilarChunksPython(query string, topK int) (SearchResponse, error) {
 	cmd := exec.Command("python", "processPDF.py", "--search-go", query, fmt.Sprintf("%d", topK))
-	output, err := cmd.Output()
+
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout
+	cmd.Stderr = &stderr
+
+	err := cmd.Run()
 	if err != nil {
-		if exitError, ok := err.(*exec.ExitError); ok {
-			log.Printf("Python script failed (vector search). Stderr: %s", string(exitError.Stderr))
-		}
-		return nil, fmt.Errorf("error executing python search: %w", err)
+		log.Printf("Python stderr: %s", stderr.String())
+		return SearchResponse{}, fmt.Errorf("python execution failed: %w", err)
 	}
 
-	var chunks []string
-	if err := json.Unmarshal(output, &chunks); err != nil {
-		log.Printf("Failed to decode Python output (raw output: %s)", string(output))
-		return nil, fmt.Errorf("error decoding python search output: %w", err)
+	var response SearchResponse
+	if err := json.Unmarshal(stdout.Bytes(), &response); err != nil {
+		log.Printf("Failed to decode Python output (raw output: %s)", string(err.Error()))
+		return SearchResponse{}, fmt.Errorf("error decoding python search output: %w", err)
 	}
 
-	return chunks, nil
+	return response, nil
 }
 
 func GenerateResponse(chatModel, prompt string) (string, error) {

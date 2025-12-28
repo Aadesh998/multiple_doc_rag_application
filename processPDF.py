@@ -44,25 +44,34 @@ def extract_text(pdf_path):
     except Exception as e:
         print(f"An error occurred while reading the PDF: {e}")
         return None
-
+    
 def preprocess_text(text):
-    """Cleans the extracted PDF text."""
-    print("Preprocessing text...")
-    text = re.sub(r'\n+', ' ', text)
-    text = re.sub(r'[^a-zA-Z0-9\s.,!?\-]', '', text)
-    text = re.sub(r'\s+', ' ', text).strip()
+    text = re.sub(r'\r\n', '\n', text)
+    text = re.sub(r'\n+', '\n', text)
+
+    text = re.sub(r'\.{3,}', '', text)
+
+    text = re.sub(r'[ \t]+', ' ', text)
+    lines = [line.strip() for line in text.split('\n') if line.strip()]
+    text = '\n'.join(lines)
+    def normalize_acronyms(match):
+        return match.group(0).upper()
+    
+    text = re.sub(r'\b[A-Z]{2,}\b', normalize_acronyms, text)
+
     print("Text preprocessing complete.")
     output_path = os.path.abspath("preprocess.txt")
-    print(f"Saving raw text to: {output_path}")
+    print(f"Saving preprocessed text to: {output_path}")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(text)
 
-    return text.strip()
+    return text
+
 
 def get_text_chunks(text):
     '''Splits text into manageable chunks.    '''
     print("Splitting text into chunks...")
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     chunks = text_splitter.split_text(text)
     print(f"Text split into {len(chunks)} chunks.")
     return chunks
@@ -115,23 +124,37 @@ def search_for_go(query_text, k=3):
         query_vector = get_embeddings(query_text)
         if not query_vector:
             return []
+
         conn = sqlite3.connect(DB_PATH)
         conn.enable_load_extension(True)
         sqlite_vec.load(conn)
         conn.enable_load_extension(False)
+
         q = serialize_float32(query_vector)
+
         rows = conn.execute("""
-            SELECT e.chunk
+            SELECT e.chunk, v.embedding
             FROM vec_embeddings v
             JOIN embeddings e ON e.id = v.id
             WHERE v.embedding MATCH ?
-                AND k = ?
+              AND k = ?
             ORDER BY v.distance
         """, (q, k)).fetchall()
+
         conn.close()
-        return [r[0] for r in rows]
+
+        results = []
+        for chunk, embedding_blob in rows:
+            embedding = np.frombuffer(embedding_blob, dtype=np.float32).tolist()
+            results.append({
+                "chunk": chunk,
+                "embedding": embedding
+            })
+
+        return query_vector, results
+
     except Exception as e:
-        logger.exception(f"{e}")
+        logger.exception(e)
         return []
 
 def test_ollama():
@@ -151,8 +174,11 @@ if __name__ == "__main__":
             sys.exit(0)
         q = sys.argv[2]
         k = int(sys.argv[3]) if len(sys.argv) > 3 else 3
-        res = search_for_go(q, k)
-        print(json.dumps(res))
+        query_vec, res = search_for_go(q, k)
+        print(json.dumps({
+            "query_vector": query_vec,
+            "result": res
+        }))
         sys.exit(0)
 
     if not test_ollama():
